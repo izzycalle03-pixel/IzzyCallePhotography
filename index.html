@@ -27,7 +27,6 @@
  
     a { text-decoration: none; color: inherit; }
  
-    /* ── NAV ─────────────────────────────────────── */
     nav {
       position: fixed;
       top: 0; left: 0; right: 0;
@@ -66,7 +65,6 @@
     .nav-links a:hover,
     .nav-links a.active { color: var(--black); }
  
-    /* ── PORTFOLIO PAGE ──────────────────────────── */
     .page-label {
       position: fixed;
       top: var(--nav-h);
@@ -84,11 +82,10 @@
  
     .portfolio-wrap {
       padding-top: calc(var(--nav-h) + 2rem);
-      padding-bottom: 56px; /* space for tagline bar */
+      padding-bottom: 56px;
       min-height: 100vh;
     }
  
-    /* Filter row */
     .filters {
       display: flex;
       gap: 0;
@@ -120,7 +117,6 @@
       border-color: var(--black);
     }
  
-    /* Masonry grid */
     .masonry {
       columns: 3 240px;
       column-gap: 10px;
@@ -166,12 +162,8 @@
  
     .m-item:hover .cap { opacity: 1; transform: translateY(0); }
  
-    /* hidden state for filter */
-    .m-item.hidden {
-      display: none;
-    }
+    .m-item.hidden { display: none; }
  
-    /* Bottom tagline */
     .tagline-bar {
       position: fixed;
       bottom: 0; left: 0; right: 0;
@@ -201,7 +193,6 @@
       .masonry { columns: 1; }
     }
  
-    /* ── LIGHTBOX ────────────────────────────────── */
     .lb {
       position: fixed;
       inset: 0;
@@ -245,7 +236,6 @@
  
     .lb-close:hover { color: var(--cream); }
  
-    /* Hamburger */
     .hamburger {
       display: none;
       background: none; border: none;
@@ -303,39 +293,51 @@
  
     <div class="masonry" id="masonry">
       <div class="m-item" data-cat="portrait">
-        <img src="photos/grad-man.jpg" alt="Portrait" />
-        <div class="cap">Portrait — Graduation</div>
-      </div>
-      <div class="m-item" data-cat="commercial">
-        <img src="photos/nails-1.jpg" alt="Commercial" />
-        <div class="cap">Commercial — Branding</div>
+        <img src="DSCF0814.JPG" alt="Portrait" />
+        <div class="cap">Portrait</div>
       </div>
       <div class="m-item" data-cat="portrait">
-        <img src="photos/makeup-1.jpg" alt="Portrait" />
-        <div class="cap">Portrait — Editorial</div>
-      </div>
-      <div class="m-item" data-cat="lifestyle">
-        <img src="photos/grad-woman.jpg" alt="Lifestyle" />
-        <div class="cap">Lifestyle — Graduation</div>
-      </div>
-      <div class="m-item" data-cat="commercial">
-        <img src="photos/nails-2.jpg" alt="Commercial" />
-        <div class="cap">Commercial — Portrait</div>
+        <img src="DSCF0818-2.JPG" alt="Portrait" />
+        <div class="cap">Portrait</div>
       </div>
       <div class="m-item" data-cat="portrait">
-        <img src="photos/makeup-2.jpg" alt="Portrait" />
-        <div class="cap">Portrait — Fine Art</div>
-      </div>
-      <div class="m-item" data-cat="lifestyle">
-        <img src="photos/grad-cap.jpg" alt="Lifestyle" />
-        <div class="cap">Lifestyle — Editorial</div>
+        <img src="DSCF0910-2.JPG" alt="Portrait" />
+        <div class="cap">Portrait</div>
       </div>
       <div class="m-item" data-cat="portrait">
-        <img src="photos/sunglasses.jpg" alt="Portrait" />
-        <div class="cap">Portrait — Lifestyle</div>
+        <img src="DSCF0968-5.JPG" alt="Portrait" />
+        <div class="cap">Portrait</div>
       </div>
       <div class="m-item" data-cat="portrait">
-        <img src="photos/hero.jpg" alt="Portrait" />
+        <img src="DSCF0604.JPG" alt="Portrait" />
+        <div class="cap">Portrait</div>
+      </div>
+      <div class="m-item" data-cat="portrait">
+        <img src="DSCF0969.jpg" alt="Portrait" />
+        <div class="cap">Portrait</div>
+      </div>
+      <div class="m-item" data-cat="portrait">
+        <img src="IMG_0303.jpg" alt="Portrait" />
+        <div class="cap">Portrait</div>
+      </div>
+      <div class="m-item" data-cat="portrait">
+        <img src="IMG_0912.jpg" alt="Portrait" />
+        <div class="cap">Portrait</div>
+      </div>
+      <div class="m-item" data-cat="portrait">
+        <img src="_DSC0857.JPG" alt="Portrait" />
+        <div class="cap">Portrait</div>
+      </div>
+      <div class="m-item" data-cat="portrait">
+        <img src="DSCF0557 2.JPG" alt="Portrait" />
+        <div class="cap">Portrait</div>
+      </div>
+      <div class="m-item" data-cat="portrait">
+        <img src="DSCF0557.JPG" alt="Portrait" />
+        <div class="cap">Portrait</div>
+      </div>
+      <div class="m-item" data-cat="portrait">
+        <img src="DSCF0584.JPG" alt="Portrait" />
         <div class="cap">Portrait</div>
       </div>
     </div>
@@ -347,7 +349,6 @@
     <span>© 2026 Izzy Calle</span>
   </div>
  
-  <!-- Lightbox -->
   <div class="lb" id="lb">
     <div class="lb-inner">
       <button class="lb-close" id="lbClose">Close ×</button>
@@ -356,13 +357,11 @@
   </div>
  
   <script>
-    // Nav hamburger
     const ham = document.getElementById('ham');
     const navLinks = document.getElementById('navLinks');
     ham.addEventListener('click', () => navLinks.classList.toggle('open'));
     navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navLinks.classList.remove('open')));
  
-    // Filter
     document.querySelectorAll('.f-btn').forEach(btn => {
       btn.addEventListener('click', () => {
         document.querySelectorAll('.f-btn').forEach(b => b.classList.remove('active'));
@@ -375,7 +374,6 @@
       });
     });
  
-    // Lightbox
     const lb = document.getElementById('lb');
     const lbImg = document.getElementById('lbImg');
  
@@ -394,3 +392,32 @@
   </script>
 </body>
 </html>
+
+⚠️ One thing to note:
+The file DSCF0557 2.JPG has a space in the name which can cause issues. I'd recommend renaming it to DSCF0557-2.JPG on GitHub and updating that one line in the code to match!<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Izzy Calle Photography</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.cpasted11:02 PMClaude responded: It looks like the old code was pasted again — the photos still say photos/grad-man.It looks like the old code was pasted again — the photos still say photos/grad-man.jpg etc. No worries though! Here's what to do:
+
+To replace your code on GitHub:
+
+Go to your repository and click on index.html
+Look for a pencil icon OR click the "..." (three dots) button near the top right of the file
+Select "Edit file"
+Press Ctrl+A (Windows) or Cmd+A (Mac) to select ALL the old code
+Press Delete to remove it all
+Paste the new code I gave you in the previous message
+Click "Commit changes"
+
+
+Are you on a phone or computer?
+If you're on a phone that might be why you can't find the edit option — GitHub's mobile version hides the edit button. In that case the easiest fix is to:
+
+Switch to a computer if you can, OR
+Try opening GitHub in your phone's browser and switching to "Desktop site" mode (usually in the browser's settings menu)
+
+Let me know what you're working with and I'll guide you through it! 😊Sonnet 4.6 LowClaude is AI and can make mistakes. Please double-check responses.
